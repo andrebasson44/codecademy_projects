@@ -1,0 +1,413 @@
+/*	CODECADEMY:   Building Websites From Scratch
+    UNIT:         05 (Days 10-12)
+    PROJECT:      "Tortoiseshell Optics"
+    DESCRIPTION:
+      An unguided project to review our lessons on the Box Model, CSS Display & Position, CSS3 Flexbox (Flexible Box Layout) and Responsive Web Design (relative sizing and media queries).
+			To see readme.txt for more details.
+
+    TOP TIPS:
+      1. Key Mindset to all CSS postitioning problems:
+            Important to break each component down into smaller components until you are working with a problem you've
+            seen before and know how to solve. This mindset is the key to all CSS positioning problems.
+*/
+/* GLOBAL
+ * ------
+ */
+html,
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;          /*base font size (i.e. 1em = 18px)*/
+  line-height: 1.4;
+  margin: 0;
+  background-color: azure;
+}
+
+.container {
+  max-width: 960px; /*standard container at 960px max-width*/
+  margin: 0 auto;   /*no vertical margin, auto horizontal margin to centre content*/
+}
+
+/* MAIN BANNER (with header & welcome text box)
+ * -----------
+ */
+.main-banner {
+  height: 31rem;
+  background-image: url('../images/glasses-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;   /*proportionally scales background image to container*/
+  background-position: center;
+}
+
+.header {
+  padding-top: 1rem;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-family: Helvetica;
+  font-size: 1rem;
+  background-color: cadetblue;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+.logo img {
+  height: 1.5rem;
+}
+.logo span {
+  margin-left: 1rem;
+}
+.main-nav-bar ul {
+  display: flex;
+  align-items: center;
+}
+.main-nav-bar li {
+  padding: 1rem 2rem 1rem 0;
+}
+.main-nav-bar li a {
+  color: white;
+  text-decoration: none;
+}
+
+.welcome-poster {
+  /*position: relative;
+  top: 10rem;*/
+  margin-top: 12rem;
+}
+.welcome-poster .container {
+  position: relative;
+  left: 2rem;
+  text-align: right;    /*aligns container to the right*/
+}
+.welcome-poster span {
+  padding: 1.5rem 5rem;
+  background-color: white;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+/* SERVICES-GALLERY
+ * ----------------
+ */
+.service-gallery {
+}
+.service-gallery .container {
+}
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;          /*flex items wrap when container not wide enough*/
+  margin: 3rem auto;        /*auto = to centre on horizontal axis*/
+  min-height: 8rem;         /*cannot be smaller than height of one .service element*/
+}
+.services .service {
+    /*max-width: 30%;*/
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 8rem;/*100%;*/
+    margin: 0 3rem;
+}
+.service-image {
+  display: flex;
+  justify-content: center;
+  /*align-items: flex-start;*/
+  height: 40%;
+  padding-bottom: 2rem;
+}
+.service-image img {
+  max-width: 5rem;
+  height: auto;
+  display: block;
+}
+.service-image.exams img {
+  max-width: 3.5rem;
+}
+.service-description {
+  height: 40%;
+  display: flex;
+  flex-direction: column;       /*so that lines 1 & 2 appears on different lines*/
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* COMPANY-INFO
+ * ------------
+ */
+.company-info.container {
+  display: flex;
+  justify-content: center;
+}
+.info {
+  width: 35%;
+  display: flex;          /*.title & span = flex items*/
+  flex-direction: column; /*flex items to stack ontop of each other*/
+  margin-left: 5%;
+  margin-bottom: 5rem;
+}
+.info .title {
+  color: white;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: cadetblue;
+  width: 10rem; /*8.75rem*/
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 1rem;
+}
+.info .txt {
+  /*no styling yet*/
+}
+
+/* FOOTER
+ * ------
+ */
+ footer {
+   padding: 4rem 4rem;
+ }
+ footer .logo {
+   /*see inherited styling above*/
+   margin-left: 4rem;
+ }
+
+
+ /*MEDIA QUERIES
+  *-------------
+  */
+
+/*simulate small phone screen width
+ */
+@media only screen and (max-width: 470px){
+  /*global changes*/
+  .container {
+    max-width: 100%;   /*full screen width*/
+    margin: 0 auto;    /*no vertical margin, auto horizontal margin to centre content*/
+  }
+  /*MAIN-BANNER (incl. header/navigation) changes*/
+  .main-banner{
+    height: 17rem;
+    background-position: 20%;
+  }
+  .header {            /* header/navigation-bar snaps to top */
+    padding-top: 0;
+  }
+  .logo span {
+    display: none;     /*hide the logo text (and don't preserve its space)*/
+  }
+  .main-nav-bar .large-nav {
+    display: none;     /*hide default navigation bar (and don't preserve its space)*/
+  }
+  .main-nav-bar .mobile-nav {
+    display: block;
+  }
+  .welcome-poster {
+    margin-top: 9rem;
+  }
+  .welcome-poster .container {
+    position: static;     /*no longer relative*/
+    display: block;       /*stretch full screen*/
+    text-align: center;
+  }
+  .welcome-poster span {
+    display: block;       /*take up entire container width*/
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  /*SERVICES*/
+  .service-gallery {
+    margin-top: 3.77rem;
+    margin-bottom: 3.77rem;
+  }
+  .services {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .services .service {
+    margin-bottom: 1.54rem;
+  }
+  #fittings.service,
+  #delivery.service {
+    height: 5rem;/*100%;*/
+  }
+  #fittings .service-description,
+  #delivery .service-description {
+    display: block;
+  }
+  /*COMPANY-INFO*/
+  .company-info.container {
+    /*display: flex;
+    flex-direction: column;*/
+    display: block;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .info .title {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+    margin-bottom: 0rem;
+  }
+  .info .text {
+    font-family: Helvetica;
+    font-size: 0.77rem;
+    padding: 1rem 0.25rem 4rem 0.25rem;
+  }
+  /*FOOTER*/
+  footer.container {
+    display: block;
+  }
+  footer .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+  footer .logo span {
+    display: none;
+  }
+}
+
+
+/*simulate tablet screen width (portrait orientation)
+ */
+@media only screen and (min-width: 470px) and (max-width: 768px){
+  /*GLOBAL*/
+  .container {
+    max-width: 100%;   /*full screen width*/
+    margin: 0 auto;    /*no vertical margin, auto horizontal margin to centre content*/
+  }
+  /*MAIN-BANNER (incl. header/navigation) changes*/
+  .main-banner{
+    height: 19rem;
+    background-position: 20%;
+  }
+  .header {            /* header/navigation-bar snaps to top */
+    padding-top: 0;
+  }
+  .main-banner{
+    height: 22rem;
+  }
+  .logo span {
+    display: none;     /*hide the logo text (and don't preserve its space)*/
+  }
+  .main-nav-bar .mobile-nav {
+    display: none;       /*hide small navigation bar (and don't preserve its space)*/
+  }
+  .welcome-poster {
+    margin-top: 15rem;   /*slightly higher*/
+  }
+  .welcome-poster .container {
+    position: relative;  /*still relative position*/
+    left: -2rem;         /*but container now shifted 2rem LEFT*/
+  }
+  .welcome-poster span {
+    padding: 1rem 4rem;
+    font-size: 1.33rem;
+  }
+  /*SERVICES*/
+  .services {
+    flex-wrap: wrap;
+  }
+  /*COMPANY-INFO*/
+  .company-info.container {
+    /*display: flex;
+    flex-direction: column;*/
+    display: block;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .info .title {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+    margin-bottom: 0rem;
+  }
+  .info .text {
+    font-family: Helvetica;
+    font-size: 0.77rem;
+    padding: 1rem 0.25rem 4rem 0.25rem;
+  }
+  /*FOOTER*/
+  footer.container {
+    display: block;
+  }
+  footer .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+  footer .logo span {
+    display: none;
+  }
+}
+
+/*simulate tablet screen width (landscape)
+ */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /*GLOBAL*/
+  .container {
+    max-width: 100%;   /*full screen width*/
+    margin: 0 auto;    /*no vertical margin, auto horizontal margin to centre content*/
+  }
+  /*MAIN-BANNER*/
+  .main-banner{
+    height: 22rem;
+  }
+  .header {            /* header/navigation-bar snaps to top */
+    padding-top: 0;
+  }
+  .main-nav-bar .mobile-nav {
+    display: none;       /*hide small navigation bar (and don't preserve its space)*/
+  }
+  .welcome-poster {
+    margin-top: 7rem;   /*slightly higher*/
+  }
+  .welcome-poster .container {
+    position: relative;  /*still relative position*/
+    left: -2rem;         /*but container now shifted 2rem LEFT*/
+  }
+  .welcome-poster span {
+    padding: 1.5rem 4rem;
+    font-size: 1.33rem;
+  }
+  /*SERVICES*/
+  .services {
+    flex-wrap: wrap;
+  }
+}
+
+ /*simulate desktop PC screen width
+  */
+ @media only screen and (min-width: 1024px){
+   .main-nav-bar .mobile-nav {
+     display: none;       /*hide small navigation bar (and don't preserve its space)*/
+   }
+ }
+
+ /* TROUBLESHOOTING
+  * ---------------
+  */
+ /*To Outline an item - COMMENT OUT WHEN READY*/
+ .box {
+   border: 1px solid red;
+ }
+ .box2 {
+   border: 1px dotted blue;
+ }

@@ -1,0 +1,143 @@
+html,
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background-color: white;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.main {
+  height: 30rem;
+  padding-top: 1rem;
+  /*tasl 1*/
+  background-image: url('https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tsunami-coffee/images/bg-photo.png');		/*task 1*/
+  background-repeat: no-repeat;	/*task 1*/
+  background-position: center;	/*task 1*/
+  background-size: cover;				/*task 1*/
+}
+
+.main img {
+  width: 15rem;
+  display: block;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+nav {
+  background-color: OrangeRed;
+  color: White;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;	/*task 2*/
+}
+
+.supporting,
+.rating,
+.gallery,
+.location {
+  margin: 4em auto;
+}
+
+.supporting {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+
+.supporting img {
+	height: 10%;	/*task 3*/
+  width: 10%;		/*task 3*/
+  margin-right: 5%;	/*task 4*/
+}
+
+.rating {
+  background-color: OrangeRed;
+  height: 20rem;
+  padding: 0 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating h1 {
+	font-size: 2.5rem;	/*task 5*/
+}
+
+.gallery img {
+  display: block;
+  width: 30%;
+  margin: 1.5%;
+  float: left;				/*the float property can be used to wrap text around images: here text floats left of image*/
+}
+
+.clearfix {
+  clear: both;				/*The clear property is used to control the behavior of floating elements.
+  								  		The clear property specifies on which sides of an element floating elements
+  											are NOT allowed to float. Here the elements are not allowed to float on either side.*/
+}
+
+.location {
+  text-align: center;
+  margin-bottom: 7rem;
+}
+
+.location img {
+	width: 100%;	/*task 6*/
+}
+
+footer {
+  background-color: OrangeRed;
+  padding: 0 1rem;
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5em 0;
+  color: white;
+}
+
+/*MEDIA QUERIES (tasks 7 through 14)
+ *-------------
+ */
+/*tasks 7 & 8: for larger screen widths*/
+@media only screen and (max-width: 960px){
+  .main {
+    padding-top: 0;
+  }
+}
+
+/*tasks 9 & 10: for medium screen widths*/
+@media only screen and (max-width: 700px){
+  .supporting img {
+    display: none;	/*task 10: image to dissapear at screen width less than 700px*/
+  }
+}
+
+/*tasks 11, 12, 13 & 14: for small screen widths*/
+@media only screen and (max-width: 470px){
+  .rating h1 {
+    font-size: 2rem;		/*task 12*/
+  }
+  .gallery img {
+    width: 100%;				/*task 13*/
+  	margin: 0;					/*task 13: recall, only time width should be 100%, is if the element as 0 left/righ margins*/
+  }
+  footer nav {
+    display: none;			/*task 14*/
+  }
+}

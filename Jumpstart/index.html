@@ -1,0 +1,208 @@
+<!--CODECADEMY:   Building Websites From Scratch
+    UNIT:         09. Next Steps
+    PROJECT:      Jumpstart
+    DESCRIPTION:  A responsive landing page for a crowd-sourcing website, making use of HTML5 / css3 learned to date, and more importantly, also incorporating the Bootstrap library, JavaScript, and jQuery.
+
+    NOTEs:
+  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jumpstart</title>
+    <!--load favicon-->
+    <link rel="icon" href="./resources/images/favicon/favicon.ico" type="image/x-icon">
+
+    <!--load font familiess-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+
+    <!--load reset styling first!-->
+    <link rel="stylesheet" href="./resources/css/reset.css">
+
+    <!--load Bootstrap CSS from CDN (integrity & cross-origin for malware protection)-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-
+    BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+    <!--Load Slick ('Carousel') styling for the jQuery plug-in (http://kenwheeler.github.io/slick/ or https://plugins.jquery.com/?s=carousel).  Note: JS plugin that will access this styling is loaded e/o <body> below-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+
+    <!--load your (overriding) styles last-->
+    <link rel="stylesheet" href="./resources/css/style.css">
+  </head>
+
+  <body>
+    <!--header/navigation bar (bootstrap)-->
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <!--container must stretch full viewport width-->
+        <div class="container-fluid">
+          <!--logo-->
+          <div class="navbar-header navbar-right">
+            <a class="navbar-brand" href="#">
+              <img alt="Jumpstart Logo" src="./resources/images/logo.png"/>
+            </a>
+          </div>
+          <!--links-->
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a href="#">Explore</a></li>
+            <li><a href="#">Start a Project</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+          <!--future version might have collapsable form instead of <ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>-->
+        </div>
+      </nav>
+    </header>
+
+    <!--Jumbotron (set of 4 jumbotrons used, each varying in background-image and text.  Each jumbotron wrapped inside .carousel class (jQuery plugin) to make it scroll horizontally automatically - see more in main.js)-->
+    <div class="carousel">
+      <section class="jumbotron jumbotron-fluid jumbotron-bike">
+        <div class="container">
+          <h1>Get Going</h1>
+          <p>Jumpstart your startup with some crowdsourced seed money, or support one of your 300,000,000+ creators and get rewards.</p>
+          <a href="#" class="btn btn-primary btn-lg">Jump in</a>
+        </div>
+      </section>
+      <section class="jumbotron jumbotron-fluid jumbotron-flowers">
+        <div class="container">
+          <h1>GET CREATING.</h1>
+          <p>Stop overthinking projects and begin putting them out into the world.</p>
+          <a href="#" class="btn btn-primary btn-lg">Jump in</a>
+        </div>
+      </section>
+      <section class="jumbotron jumbotron-fluid jumbotron-beer">
+        <div class="container">
+          <h1>GET THINKING.</h1>
+          <p>Meet like-minded individuals who will help fuel your creative juices.</p>
+          <a href="#" class="btn btn-primary btn-lg">Jump in</a>
+        </div>
+      </section>
+      <section class="jumbotron jumbotron-fluid jumbotron-duffel">
+        <div class="container">
+          <h1>GET STARTED.</h1>
+          <p>What are you waiting for? Today's the day for your next big idea.</p>
+          <a href="#" class="btn btn-primary btn-lg">Jump in</a>
+        </div>
+      </section>
+    </div>
+
+    <!--Featured Project (bootstrap grid system)-->
+    <section class="featured-project">
+      <div class="container">
+        <!--row1-->
+        <div class="row">
+          <!--col1-->
+          <h1 class="col-xs-12">Featured Project</h1>
+        </div>
+
+        <!--row2-->
+        <div class="row">
+          <!--col1-->
+          <div class="image-container col-xs-12 col-sm-6">
+            <a href="#">
+              <img src="./resources/images/featured-project.png" alt="House photo" />
+            </a>
+          </div>
+          <!--col2-->
+          <div class="project col-xs-6 col-sm-3">
+            <h2>DeFrost: A Documentary</h2>
+            <span>by Leo De Firenze</span>
+            <p>I have been questioned by many people to disclose some of the greatest traffic generating techniques that I know of.  I am not too immediate to reveal them becaue I know the majority doesn't even take battle on them.  All I know is that they work and you should be familiar with this too.</p>
+          </div>
+          <!--col3-->
+          <div class="product-categories col-xs-6 col-sm-3">
+            <h2>Product Categories</h2>
+            <span>Art</span><span>Books</span><span>Crystals</span>
+            <span>Design</span><span>Doodles</span><span>Deedlybobs</span>
+            <span>Farming</span><span>Gadgets</span><span>Hoverboards</span>
+            <span>Jams, Jellies, etc.</span><span>Magazines</span><span>Plants</span>
+            <span>Snakes & Snake Equipment</span><span>Tables</span>
+            <span>Ventriliquist Figures</span><span>Yoyos</span>
+          </div>
+        </div>  <!--e/o .row-->
+
+      </div>  <!--e/o .container-->
+    </section>
+
+    <!--Projects (bootstrap grid system)-->
+    <section class="projects">
+      <div class="container">
+        <!--row1-->
+        <div class="row">
+          <!--col1-->
+          <h1 class="col-xs-12">Projects</h1>
+        </div>
+
+        <!--row2-->
+        <div class="row">
+          <!--col1-->
+          <div class="project col-xs-12 col-sm-4">
+            <div class="image-container">
+              <a href="#">
+                <img src="./resources/images/project1.png" alt="Female Sitting" />
+              </a>
+            </div>
+            <h2>The Right Tights</h2>
+            <span>by Riley Mae</span>
+            <p>These tights are 50 denier, beautifully constructed, hand-dyed, and guarenteed to last (no more ladders!).  Made with hight quality, completely toxic-free materials.  Custom colors available to all backers.</p>
+          </div> <!--e/o col1-->
+
+          <!--col2-->
+          <div class="project col-xs-12 col-sm-4">
+            <div class="image-container">
+              <a href="#">
+                <img src="./resources/images/project2.png" alt="Spacious Room" />
+              </a>
+            </div>
+            <h2>Peppermint Smart Home</h2>
+            <span>by Brian McDonald</span>
+            <p>Instantly upgrade your home with technology that keeps your family and home safe.  We've made Peppermint easy to use.  Just talk to your phone and Peppermint will help you every step of the way.</p>
+          </div> <!--e/o col2-->
+
+          <!--col3-->
+          <div class="project col-xs-12 col-sm-4">
+            <div class="image-container">
+              <a href="#">
+                <img src="./resources/images/project3.png" alt="Neon Sign" />
+              </a>
+            </div>
+            <h2>American Streetlife</h2>
+            <span>by Patrick Wallace</span>
+            <p>I've been traveling around the United States for the past two years.  I've slept on hundreds of couches, more than a few benches, and captured my experiences in this 120 page photo album.</p>
+          </div> <!--e/o col3-->
+
+        </div> <!--e/o row2-->
+      </div>  <!--e/o .container-->
+    </section>
+
+    <!--Footer / Assistance-->
+    <footer>
+      <!--bootstrap fluid container (full viewport width)-->
+      <div class="container-fluid">
+        <strong>Having trouble thinking of an idea?</strong>
+        <p>Inventor's block strikes at the worst times.  But that's all changed with Jumpstart's Good Idea Generator Lite (GIGLi).
+        </p>
+        <a href="#" class="btn btn-primary btn-lg">Learn more</a>
+      </div>
+    </footer>
+
+    <!--JavaScripts here (load after HTML rendered) - can also load in <header>-->
+    <!--1. JS jQuery library-->
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!--2. jQuery plugin 'Slick' (minified version from CDN) to precede local JS (main.js)-->
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <!--3. local JS-->
+    <script src="./resources/js/main.js"></script>
+
+  </body>
+
+</html>

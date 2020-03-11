@@ -1,0 +1,315 @@
+<!--CODECADEMY:   Building Websites From Scratch
+    UNIT:         08 (Days 1 - 7)
+    PROJECT:      "Capstone Project: Colmar Academy"
+    DESCRIPTION:
+    You are tasked with designing and creating the landing page for a new school. You will help them by making informed design decisions about color and typography using the skills you learned last week. You will then implement your design.
+
+    For this project we will provide you with wireframes. A wireframe is a document which contains the positioning of the elements on a page without specifying any other design information. This allows designers and developers to focus on the flow of a site without getting distracted with design decisions such as color and typography. These aspects of the design are important, but when they are introduced too early, they can detract from other important decisions.
+
+    For this project you will implement the site specified by the wireframes and make all remaining design decisions to complete the site. You can find the wireframes for this project here (https://s3.amazonaws.com/codecademy-content/courses/freelance-1/capstone-2/colmar-academy-spec.png) and all of the necessary assets for the project here (https://s3.amazonaws.com/codecademy-content/courses/freelance-1/capstone-2/capstone_colmar_assets.zip).
+
+    TOP TIPS:
+      1. Key Mindset to all CSS postitioning problems:
+            Important to break each component down into smaller components until you are working with a problem you've
+            seen before and know how to solve. This mindset is the key to all CSS positioning problems.
+      2. Debuggin:
+            As you fix bugs, remember to use the skills you acquired in the Chrome DevTools article to help you decipher and update the site's CSS. Chrome DevTools are essential for debugging ; they allow you to view current style values, toggle rules, and test different rule values.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <!--load reset styling first!-->
+  <link rel="stylesheet" href="./resources/css/reset.css">
+  <link rel="stylesheet" href="./resources/css/style.css">
+  <!--load favicon-->
+  <link rel="icon" href="./resources/images/favicon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="content">
+      <!--logo-->
+      <div class="logo">
+        <div class="image-container">
+          <a href="index.html" class="logo-icon">
+            <img src="./resources/images/ic-logo.svg" class="icon" alt="The Colmar Logo icon"/>
+          </a>
+        </div>
+        <div class="logo-txt">
+          <a href="index.html">
+            <span>COLMAR</span>
+            <span>ACADEMY</span>
+          </a>
+        </div>
+      </div>
+
+      <!--desktop nav bar-->
+      <nav class="desktop">
+        <ul role="presentation">
+          <li><a href="#">On Campus</a></li>
+          <li><a href="#">Online</a></li>
+          <li><a href="#">For Companies</a></li>
+          <li><a href="#">Sign In</a></li>
+        </ul>
+      </nav>
+
+      <!--mobile nav bar-->
+      <nav class="mobile">
+        <ul class="" role="presentation">
+          <li><a href="#"><img src="./resources/images/ic-logo.svg" class="icon" alt="The Colmar Logo icon"/></a></li>
+          <li><a href="#"><img src="./resources/images/ic-on-campus.svg" class="icon" alt="On campus icon"/></a></li>
+          <li><a href="#"><img src="./resources/images/ic-online.svg" class="icon" alt="Online icon"/></a></li>
+          <li><a href="#"><img src="./resources/images/ic-login.svg" class="icon" alt="Login icon"/></a></li>
+        </ul>
+      </nav>
+    </div>  <!--e/o .content-->
+  </header>
+
+  <!-- Main Content -->
+  <section class="main-content">
+
+    <!-- Main Banner -->
+    <section id="start-here-section" class="banner light-grey">
+      <!-- left column -->
+      <div class="left-col">
+        <div class="image-container">
+          <img src="./resources/images/banner.jpg" alt="banner pic" />
+        </div>
+      </div>
+
+      <!-- right column: call to action (cta)-->
+      <div class="right-col">
+        <div class="start-here-cta">
+          <div class="content left">
+            <h1>Learn something new everyday</h1>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <div class="btn-container">
+              <a href="#"><div class="button center">Start Here</div></a>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Information -->
+    <section id="information-section">
+
+      <!-- left column -->
+      <div class="left-col">
+        <div class="image-container">
+          <img src="./resources/images/information-main.jpg" alt="Info Main Photo" />
+        </div>
+        <div class="content left">
+          <h2>It doesn't hurt to keep practicing</h2>
+          <span class="quote">Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo lectus,nec consequat neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligula.</span>
+          <span>Emanuel, Sr Strategist at Hiring.com</span>
+        </div>
+      </div>
+
+      <!-- right column -->
+      <div class="right-col" role="complementary">
+        <div class="item">
+          <div class="image-container">
+            <img class="desktop" src="./resources/images/information-orientation.jpg"  alt="orientation photo" />
+            <img class="mobile" src="./resources/images/information-orientation-mobile.jpg" alt="orientation photo" />
+          </div>
+          <div class="content">
+            <h3>Orientation date</h3>
+            <span>Tue 10/11 & Wed 10/12: 8am-3pm</span>
+            <span class="read-more"><a href="#">Read more</span></a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image-container">
+            <img class="desktop" src="./resources/images/information-campus.jpg" alt="campus photo" />
+            <img class="mobile" src="./resources/images/information-campus-mobile.jpg" alt="campus photo" />
+          </div>
+          <div class="content">
+            <h3>Our campus</h3>
+            <span>Find which campus is close by you</span>
+            <span class="read-more"><a href="#">Read more</span></a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image-container">
+            <img class="desktop" src="./resources/images/information-guest-lecture.jpg" alt="guest lecture photo" />
+            <img class="mobile" src="./resources/images/information-guest-lecture-mobile.jpg" alt="guest lecture photo" />
+          </div>
+          <div class="content">
+            <h3>Our guest lecture</h3>
+            <span>Join a keynote with Oliver Sack about music in medical treatment</span>
+            <span class="read-more"><a href="#">Read more</span></a>
+          </div>
+        </div>
+      </div>
+    </section>  <!--e/o .information-section-->
+
+    <!-- Courses -->
+    <section id="course-section" class="light-grey">
+      <div class="heading center">
+        <h2>Start Learning</h2>
+      </div>
+      <div class="courses">
+        <!--Software Engineering-->
+        <div class="course">
+          <a href="#">
+            <div class="image-container desktop">
+              <img src="./resources/images/course-software.jpg" alt="Software Engineering Course stock photo" />
+            </div>
+            <div class="content">
+              <h3>Software Engineering</h3>
+              <div class="desktop">
+                <span class="caps">COURSES</span>
+                <span>Web Development, Mobile Development, iOT, APIs</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!--Computer Art-->
+        <div class="course">
+          <a href="#">
+            <div class="image-container desktop">
+              <img src="./resources/images/course-computer-art.jpg" alt="Computer Art Course stock photo" />
+            </div>
+            <div class="content">
+              <h3>Computer Art</h3>
+              <div class="desktop">
+                <span class="caps">COURSES</span>
+                <span>Imaging & Design, Web Design, Motion Graphics & Visual Effects, Computer Animation</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!--Design-->
+        <div class="course">
+          <a href="#">
+            <div class="image-container desktop">
+              <img src="./resources/images/course-design.jpg" alt="Design Course stock photo" />
+            </div>
+            <div class="content">
+              <h3>Design</h3>
+              <div class="desktop">
+                <span class="caps">COURSES</span>
+                <span>User Experience Design, User Research, Visual Design</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!--Data-->
+        <div class="course">
+          <a href="#">
+            <div class="image-container desktop">
+              <img src="./resources/images/course-data.jpg" alt="Data Course stock photo" />
+            </div>
+            <div class="content">
+              <h3>Data</h3>
+              <div class="desktop">
+                <span class="caps">COURSES</span>
+                <span>Data Science, Big Data, SQL, Data Visualization</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!--Business-->
+        <div class="course">
+          <a href="#">
+            <div class="image-container desktop">
+              <img src="./resources/images/course-business.jpg" alt="Business Course stock photo" />
+            </div>
+            <div class="content">
+              <h3>Business</h3>
+              <div class="desktop">
+                <span class="caps">COURSES</span>
+                <span>Product Development, Business Development, Startup</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!--Marketing-->
+        <div class="course">
+          <a href="#">
+            <div class="image-container desktop">
+              <img src="./resources/images/course-marketing.jpg" alt="Marketing Course stock photo" />
+            </div>
+            <div class="content">
+              <h3>Marketing</h3>
+              <div class="desktop">
+                <span class="caps">COURSES</span>
+                <span>Analytics, Content Marketing, Mobile Marketing</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>  <!--e/o .courses-->
+    </section>  <!--e/o .course-section-->
+
+    <!-- Thesis Exhibition -->
+    <section id="thesis-section">
+      <div class="heading center">
+        <h2>Thesis Exhibit</h2>
+      </div>
+      <section id="thesis-subsection">
+        <!-- left column -->
+        <div class="left-col">
+          <div class="video-container">
+            <!--<video src="./resources/videos/thesis.mp4" height="240" width="320" controls="">Video not supported</video>-->
+            <video src="./resources/videos/thesis.mp4" controls="">Video not supported</video>
+          </div>
+          <div class="content left desktop">
+            <h2>Reimagine urban</h2>
+            <span class="quote">Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo lectus,nec consequat neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligula.</span>
+          </div>
+        </div>  <!--e/o .left-col-->
+
+        <!-- right column -->
+        <div class="right-col desktop" role="complementary">
+          <a href="#">
+            <div class="item">
+                <div class="image-container">
+                  <img src="./resources/images/thesis-fisma.jpg" alt="Prototyping stock photo" />
+                </div>
+                <div class="content">
+                  <h3>Fisma: Design and Prototype</h3>
+                  <span>Designer showcase of new prototype product</span>
+                </div>
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="item">
+                <div class="image-container">
+                  <img src="./resources/images/thesis-now-and-then.jpg" alt="NY city stock photo" />
+                </div>
+                <div class="content">
+                  <h3>Now and then</h3>
+                  <span>Research study about New York</span>
+                </div>
+            </div>
+          </a>
+
+        </div>      <!--e/o .right-col-->
+      </section>  <!--e/o .thesis-subsection-->
+    </section>  <!--e/o .thesis-section-->
+
+  </section>  <!--e/o Main Content-->
+
+  <!-- Footer -->
+  <footer>
+    <div class="content">
+      <span class="copyright">© 2016  Colmar Activity, All Rights Reserved</span>
+      <nav class="desktop">
+        <ul role="presentation">
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
